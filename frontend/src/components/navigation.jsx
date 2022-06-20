@@ -15,7 +15,7 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
             <span className='icon-bar'></span>{' '}
           </button>
-          <a className='navbar-brand page-scroll' href='#page-top'>
+          <a className='navbar-brand page-scroll' href='/#page-top'>
             Anime-Gadgets
           </a>{' '}
         </div>
@@ -36,23 +36,18 @@ export const Navigation = (props) => {
               </a>
             </li>
             <li>
-              <a href='/#portfolio' className='page-scroll'>
-                Gallery
-              </a>
-            </li>
-            <li>
               <a href='/#contact' className='page-scroll'>
                 Contact
               </a>
             </li>
             
             <li>
-              <a href='#contact' className='page-scroll'>
+              <a href='/register' className='page-scroll'>
                 Register
               </a>
             </li>
             <li>
-              <a href='#contact' className='page-scroll'>
+              <a href='login' className='page-scroll'>
                 Login
               </a>
             </li>

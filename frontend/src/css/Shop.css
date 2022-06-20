@@ -1,0 +1,14 @@
+#grid1 {
+    margin-top: 7%;
+    
+}
+
+#menuo {
+    background-color: rgb(70, 70, 70);
+}
+
+.menu_el {
+    border: 2px solid rgb(66, 65, 65);
+    padding: 3%;
+    margin: 10px;
+}

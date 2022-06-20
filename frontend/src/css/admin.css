@@ -1,0 +1,30 @@
+#all_cont {
+    margin: 10%;
+}
+
+.input {
+    border:none;
+    appearance: none;
+    -webkit-appearance: none;
+    -ms-progress-appearance: none;
+    -moz-appearance: none;
+    padding:10px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    width: 250px;
+    outline:none;
+    color:#222
+}
+
+.input:focus::placeholder {
+    color: transparent;
+}
+
+.input::placeholder {
+    color: #5f5f5f;
+    transition:color 0.3s ease;
+}
+
+button {
+    padding: 10px;
+}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4z^_cfzo-$3&&iq9(3j%!ovfk#5%7812ddhn*9vjbfyp!eys1t'
+SECRET_KEY = 'django-insecure-xj@tut18dv3m0f&$=y7w6wxd0s_=$b&kjs7h(u8c4qouba@i-9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,14 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    #3rd party
+    # local
+    'api',
+    'products',
+    'userAuth',
+    # 3rd party
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -124,3 +130,27 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES':[
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES':['Bearer'],
+    'ACCESS_TOKEN_LIFETIME':datetime.timedelta(seconds=30),
+    'REFRESH_TOKEN_LIFETIME':datetime.timedelta(minutes=1),
+}
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://localhost:3000',
+]
