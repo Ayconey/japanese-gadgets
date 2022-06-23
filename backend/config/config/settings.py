@@ -38,13 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # local
     'api',
     'products',
     'userAuth',
+    'orders',
     # 3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
     'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -146,11 +154,17 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES':['Bearer'],
-    'ACCESS_TOKEN_LIFETIME':datetime.timedelta(seconds=30),
-    'REFRESH_TOKEN_LIFETIME':datetime.timedelta(minutes=1),
+    'ACCESS_TOKEN_LIFETIME':datetime.timedelta(seconds=10),
+    'REFRESH_TOKEN_LIFETIME':datetime.timedelta(days=3),
 }
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://localhost:3000',
 ]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']

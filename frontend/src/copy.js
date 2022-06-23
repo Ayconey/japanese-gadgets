@@ -1,39 +1,42 @@
-import React, { Component,useState } from 'react'
-import { useSearchParams,Navigate } from 'react-router-dom';
+import React, { Component } from 'react'
+import { useSearchParams } from 'react-router-dom';
 import { Form,Button,Row,Col } from 'react-bootstrap';
 import '../css/admin.css'
 import axios from 'axios';
 
-const Login = (props) => {
-  //states
-  const [Logged,updateLogged] = useState(false)
-  const [SearchParams,SetSearchParams] = useSearchParams();
-  const FromRegister = SearchParams.get('from-register') === 'true'
-  
-  // functions
+export default class Login extends Component {
+    constructor(props){
+      
+        super(props);
+        this.state = {
+          logged:false,
+          from_register:false,
+        }
+    }
 
-  const try_login = (event) => {
+  
+  try_login = (event) => {
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
     axios.post('http://127.0.0.1:8000/api/token/',{'username':username,'password':password})
-    .then((response)=>{
+    .then(response=>{
         let access = response.data.access
         let refresh = response.data.refresh
-        props.SetToken(access,refresh)
-        updateLogged(true);
+        this.props.SetToken(access,refresh)
     })
   }
   
-  // return
-    if (Logged){
-      return <Navigate to='/'/>
-    }else if(FromRegister){
+  render() {
+    console.log(this.state)
+    if (this.state.logged){
+      return
+    }else if(this.state.from_register){
       return (
         <div className='text-center' id="all_cont">
-          <h3>You are succesfully registered! You can now login to your account</h3>
+          <h3>You are succesfully registered!You can now login to your account</h3>
           <h2>Login</h2>
-          <form onSubmit={try_login}>
+          <form onSubmit={this.try_login}>
             <input type='text' placeholder='Username' className='input' name='username'></input>
             <br></br>
             <br></br>
@@ -49,7 +52,7 @@ const Login = (props) => {
       return (
         <div className='text-center' id="all_cont">
           <h2>Login</h2>
-          <form onSubmit={try_login}>
+          <form onSubmit={this.try_login}>
             <input type='text' placeholder='Username' className='input' name='username'></input>
             <br></br>
             <br></br>
@@ -63,5 +66,5 @@ const Login = (props) => {
         </div>
       )
     }
+  }
 }
-export default Login;

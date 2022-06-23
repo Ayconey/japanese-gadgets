@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Grid, Link} from '@mui/material';
+import { Grid, Link,Button} from '@mui/material';
 import '../css/Shop.css'
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 export default class Shop extends Component {
   constructor(props){
@@ -13,12 +14,18 @@ export default class Shop extends Component {
   }
 
   getProducts = () => {
-    axios.get('http://127.0.0.1:8000/api/products/')
+    const headers = {
+      'content-type':'application/json',
+    }
+
+    axios.get('http://127.0.0.1:8000/api/products/',{headers:headers})
     .then(response=>{
-      console.log(response.data.results)
       this.setState({products:response.data.results})
     })
-    .catch(()=>{this.setState({error:true})})
+    .catch((error)=>{
+      this.setState({error:true})
+      console.log(error)
+    })
   }
   componentDidMount(){
     this.getProducts()
@@ -38,6 +45,7 @@ export default class Shop extends Component {
               </Grid>
               <Grid item xs={6} id='produkty_cont' >
                 <h2>Error</h2>
+                <p>refresh the page</p>
               </Grid>
             </Grid>
         </div>
@@ -60,6 +68,7 @@ export default class Shop extends Component {
                   <div key={item.id}>
                     <h3>{item.title}</h3>
                     <p>{item.body}</p>
+                    <Button><a href={`/products${item.id}`}>order</a></Button>
                   </div>
                 ))}
               </div>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics,permissions
+
 from .models import Product
 from .serializers import ProductSerializer
 # Create your views here.
@@ -8,6 +9,7 @@ from .serializers import ProductSerializer
 class ProductMixinView():
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
 class ProductListView(ProductMixinView,generics.ListCreateAPIView):
