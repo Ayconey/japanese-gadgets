@@ -1,19 +1,33 @@
 from django.shortcuts import render
+from django.contrib.auth import get_user_model
 from rest_framework import generics,status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from .serializers import UserSerializer
+from .models import Profile
 # Create your views here.
+User = get_user_model()
 
-# @api_view(['POST'])
-# def user_register_view(request):
-#     if request.method == "POST":
-#         try:
-#             username = request.data['username']
-#             password1 = request.data['password1']
-#             password2 = request.data['password2']
-#         except:
-#             return Response(status=status.HTTP_400_BAD_REQUEST,data={"message_log" : "some of the fields are not provided" })
-#
-#     return Response(status=200,data={'message':'ok'})
+
+class UserListView(generics.ListAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+
+
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+
+    def get(self,*args,**kwargs):
+        pk = kwargs.get('pk')
+        if pk == 9999999999:
+            kwargs['pk'] = self.request.user.id
+        return self.retrieve(self,*args,**kwargs)
+
+
+@api_view(['GET'])
+def get_user_data(request):
+    us = request.user
+    serializer = UserSerializer(us)
+    return Response(status=200,data=serializer.data)

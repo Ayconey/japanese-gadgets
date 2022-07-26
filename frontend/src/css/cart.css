@@ -1,0 +1,16 @@
+
+#img1 {
+    border:solid black 2px;
+    width: 20%;
+}
+
+.items {
+    background-color: white;
+}
+.summary {
+    background-color: white;
+}
+
+h3 {
+    font-size:150%;
+}

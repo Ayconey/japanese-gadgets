@@ -61,6 +61,11 @@ export const Navigation = (props) => {
                   logout
                 </a>
               </li>
+              <li>
+                <a href='/cart' className='page-scroll'>
+                  koszyk
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -119,6 +124,11 @@ export const Navigation = (props) => {
               <li>
                 <a href='login' className='page-scroll'>
                   Login
+                </a>
+              </li>
+              <li>
+                <a href='/cart' className='page-scroll'>
+                  koszyk
                 </a>
               </li>
             </ul>

@@ -2,3 +2,21 @@
     margin-top: 7%;
     text-align: center;
 }
+#form1 {
+    margin-top: 5%;
+}
+.btn1 {
+    margin:3%
+}
+
+#twoje_dane_header {
+    font-size: 200%;
+}
+
+#modalDelete {
+    margin-top: 5%;
+}
+
+#modalChangePassword {
+    margin-top: 10%;
+}

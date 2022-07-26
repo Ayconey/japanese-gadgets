@@ -68,6 +68,7 @@ export default class Shop extends Component {
                   <div key={item.id}>
                     <h3>{item.title}</h3>
                     <p>{item.body}</p>
+                    <img src={`${item.image}`} style={{width:100}}/>
                     <Button><a href={`/products${item.id}`}>order</a></Button>
                   </div>
                 ))}

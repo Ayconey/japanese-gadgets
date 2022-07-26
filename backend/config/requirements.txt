@@ -7,3 +7,4 @@ pyyaml
 requests
 django-cors-headers
 django-allauth
+Pillow

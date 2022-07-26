@@ -15,6 +15,10 @@ import Admin from "./pages/admin";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/profile";
+import YourOrders from "./pages/YourOrders";
+import Cart from "./pages/Cart";
+import CheckoutOrder from "./pages/CheckoutOrder";
+
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -36,6 +40,8 @@ export default class App extends Component {
     this.GetToken();
   }
 
+
+  //token calls
 
   VerifyToken = (access,refresh) => {
     let headers = {
@@ -92,11 +98,14 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<Home landingPageData={this.state.landingPageData} />} ></Route>
             <Route path="/admin" element={<Admin />} ></Route>
+            <Route path="/your-orders" element={<YourOrders />} ></Route>
             <Route path="/login" element={<Login SetToken={this.SetToken} />} ></Route>
             <Route path="/register" element={<Register />} ></Route>
             <Route path="/shop" element={<Shop />} ></Route>
             <Route path="/products:id" element={<ProductPage />} ></Route>
             <Route path="/profile" element={<Profile />} ></Route>
+            <Route path="/cart" element={<Cart />} ></Route>
+            <Route path="/checkout" element={<CheckoutOrder />} ></Route>
           </Routes>
         </Router>
   

@@ -1,0 +1,30 @@
+#container1 {
+    margin-top: 10%;
+    
+}
+
+#middle-column {
+    text-align: center;
+    margin-bottom: 10%;
+    background-color: rgb(221, 221, 221);
+    padding: 5%;
+}
+#p_title {
+    margin-bottom: 5%;
+}
+#image-column {
+    padding-top: 5%;
+}
+#image-column img{
+    border:solid black 2px;
+    width: 120%;
+}
+#text-column {
+    padding-bottom: 10%;
+}
+#button-row{
+    margin-top: 40%;
+}
+#btn1 {
+    margin-top:10%;
+}

@@ -1,0 +1,13 @@
+.delivery {
+    background-color: white;
+}
+
+#sel-list {
+    height: 4%;
+    width: 14%;
+}
+
+#sel-list option {
+    height: 4%;
+    width: 14%;
+}
