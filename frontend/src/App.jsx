@@ -18,7 +18,7 @@ import Profile from "./pages/profile";
 import YourOrders from "./pages/YourOrders";
 import Cart from "./pages/Cart";
 import CheckoutOrder from "./pages/CheckoutOrder";
-
+import InfoPage from "./pages/InfoPage";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -98,6 +98,7 @@ export default class App extends Component {
           <Routes>
             <Route path="/" element={<Home landingPageData={this.state.landingPageData} />} ></Route>
             <Route path="/admin" element={<Admin />} ></Route>
+            <Route path="/info" element={<InfoPage />} ></Route>
             <Route path="/your-orders" element={<YourOrders />} ></Route>
             <Route path="/login" element={<Login SetToken={this.SetToken} />} ></Route>
             <Route path="/register" element={<Register />} ></Route>

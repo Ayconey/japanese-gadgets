@@ -74,7 +74,7 @@ export default function ProductPage(props) {
                     <h3>Dostępność: {Product.count} sztuk</h3>
                     <h3 id='price'>cena: {Product.price} zł</h3>
                         <button id='btn1' onClick={UpdateCart}>Add to cart</button>
-                        <input type='number' min={0} max={100} defaultValue={1} onChange={QuantityHelper}></input>
+                        <input type='number' min={0} max={Product.count} defaultValue={1} onChange={QuantityHelper}></input>
                     </Row>
                     
                 </Col>

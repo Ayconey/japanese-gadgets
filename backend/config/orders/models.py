@@ -16,6 +16,8 @@ class Order(models.Model):
     full_price = models.DecimalField(decimal_places=2,max_digits=20)
     completed = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.user.username + ' ' + str(self.submit_date)
 
 class DeliveryInfo(models.Model):
     order = models.OneToOneField(Order,on_delete=models.CASCADE,related_name='delivery_info')

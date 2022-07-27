@@ -102,7 +102,7 @@ export default function Cart() {
               {Cart.map((item)=>(
                 <div key={item.product.id} className='cart_item'>
                   <h3>{item.product.title} - <input type='number' min={0} name={`${item.product.id}`} onChange={handleChange} defaultValue={item.quantity}
-                  ></input> <button><RemoveIcon fontSize='small'></RemoveIcon></button>/<button><AddIcon fontSize='small'></AddIcon></button></h3>
+                  max={item.product.count}></input> <button><RemoveIcon fontSize='small'></RemoveIcon></button>/<button><AddIcon fontSize='small'></AddIcon></button></h3> <p>max {item.product.count}szt.</p>
                   <p>cena: {item.product.price}zł</p>
                   <p>łącznie: {item.price}zł</p>
                   <img id='img1' src={`http://127.0.0.1:8000/${item.product.image}`}/>

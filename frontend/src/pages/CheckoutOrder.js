@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom';
 import {Row,Col} from 'react-bootstrap'
 import axios from 'axios'
 import Cookies from 'js-cookie'
@@ -27,7 +28,7 @@ export default function CheckoutOrder() {
   const [PaymentMethod,updatePaymentMethod] = useState('card')
   const [FinalPrice,updateFinalPrice] = useState(0)
   const [delivery_pay,updateDelivery] = useState(false)
-
+  const [moveNext,updateMove] = useState(false)
 
   let getData = () => { // get user data from the database
     const headers = {
@@ -75,7 +76,7 @@ export default function CheckoutOrder() {
     console.log(data)
     axios.post(`http://127.0.0.1:8000/api/orders/`,data,{headers:headers})
   .then((response)=>{
-      console.log(response)
+      updateMove(true)
   })
   .catch(error=>{
     console.log(error)
@@ -97,6 +98,13 @@ export default function CheckoutOrder() {
       pay_at_delivery = 9
     }
 
+  if(moveNext){
+    return <Navigate to={{
+      pathname: "/info",
+      search: "?mode=afterOrder",
+      state: { }
+    }}/>
+  }
   return (
     <div>
       
