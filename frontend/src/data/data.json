@@ -1,7 +1,7 @@
 {
   "Header": {
-    "title": "Anime-Gadgets",
-    "paragraph": "Sklep z figurkami i innymi gadżetami anime"
+    "title": "Japanese-Gadgets",
+    "paragraph": "Sklep z figurkami i innymi gadżetami z japonii"
   },
   "About": {
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -20,50 +20,36 @@
   },
   "Gallery": [
     {
-      "title": "Project Title",
+      "title": "etui demon slayer",
       "largeImage": "img/portfolio/01-large.jpg",
       "smallImage": "img/portfolio/01-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "lampa led",
       "largeImage": "img/portfolio/02-large.jpg",
       "smallImage": "img/portfolio/02-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "wielofunkcyjna sofa",
       "largeImage": "img/portfolio/03-large.jpg",
       "smallImage": "img/portfolio/03-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "toster rybny",
       "largeImage": "img/portfolio/04-large.jpg",
       "smallImage": "img/portfolio/04-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "nakładka na monitor",
       "largeImage": "img/portfolio/05-large.jpg",
       "smallImage": "img/portfolio/05-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "okulary iniemamocni",
       "largeImage": "img/portfolio/06-large.jpg",
       "smallImage": "img/portfolio/06-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/08-large.jpg",
-      "smallImage": "img/portfolio/08-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
     }
+    
   ],
   "Services": [
     {
@@ -152,9 +138,9 @@
     }
   ],
   "Contact": {
-    "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "address": " Polska,Warszawa,ul.Ursynowska 14 , CA 12345 ",
+    "phone": "+48 123 456 1234",
+    "email": "info@firma.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
@@ -162,23 +148,23 @@
   "Features": [
     {
       "icon": "fa fa-comments-o",
-      "title": "F1",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "dobra obsługa klienta",
+      "text": "Z nami dogadasz się w każdym języku i o wszystko."
     },
     {
       "icon": "fa fa-bullhorn",
-      "title": "F2",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Pokazywanie kultury japonii",
+      "text": "Poprzez sprzedaż rozprzestrzeniamy kulturę japonii na całe kraje."
     },
     {
       "icon": "fa fa-group",
-      "title": "F3",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "tworzymy społeczność",
+      "text": "Każdy może się z nami utożsamiać."
     },
     {
       "icon": "fa fa-magic",
-      "title": "F4",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Magiczna jakość",
+      "text": "Magiczna jakość produktów to tylko jedna z naszych zalet"
     }
   ]
 }

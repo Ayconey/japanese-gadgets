@@ -106,11 +106,11 @@ export default function Profile() {
     <div>
       <Modal show={PopUp2} style={{opacity:1}} id='modalChangePassword' onHide={()=>{updatePopUp2(false)}}>
           <Modal.Header>
-            <Modal.Title>Are you sure, you want this?</Modal.Title>
+            <Modal.Title>Jesteś pewien, że chcesz to zrobić?</Modal.Title>
           </Modal.Header>
           <form onSubmit={handleChangePassword}>
           <Modal.Body>
-            <p>Change password only if neccessary, hasło powinno być:</p>
+            <p>Zmień hasło tylko jeśli naprawdę tego potrzebujesz, hasło powinno być:</p>
             <ul>
               <li>- różne od loginu</li>
               <li>- przynajmniej 8 znakowe</li>
@@ -140,9 +140,11 @@ export default function Profile() {
 
         <Modal show={PopUp} style={{opacity:1}} id='modalDelete' onHide={()=>{updatePopUp(false)}}>
           <Modal.Header>
-            <Modal.Title>Are you sure, you want this?</Modal.Title>
+            <Modal.Title>Jesteś pewien, że chcesz to zrobić?</Modal.Title>
           </Modal.Header>
-          <Modal.Body>You are about to delete your account, your all informations will be deleted.</Modal.Body>
+          <Modal.Body>Po kliknięciu usuniesz swoje konto, wszystkie twoje informacje zostaną usunięte i nie będzie
+            można ich odzyskać.
+          </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={()=>{updatePopUp(false)}}>
               Cancel

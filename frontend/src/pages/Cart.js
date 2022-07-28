@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom';
 import { Col,Row,Container,Modal,Button } from 'react-bootstrap';
 import Cookies from 'js-cookie'
 import axios from 'axios'
@@ -85,12 +86,34 @@ export default function Cart() {
 
   //Components
   let Button = () => {
-    if(ItemPrice != 0){
+    let validated = true
+    let DataNone = false
+    if(ItemPrice===0){
+      validated=false
+    }
+    for (const [key, value] of Object.entries(User.profile)) {
+      if(value ===""){
+        validated=false
+        DataNone=true
+      }
+    }
+
+    if(validated){
       return <button><a href='/checkout'>Zamawiam i płacę</a></button>
+    }
+    if(DataNone){
+      return <div>uzupełnij dane profilu</div>
     }
     return <div></div>
   }
 
+  if(!Cookies.get('access')){
+    return <Navigate to={{
+      pathname: "/info",
+      search: "?mode=loginFirst",
+      state: { }
+    }}/>
+  }
   return (
     <div>
         <Row id='grid1'>

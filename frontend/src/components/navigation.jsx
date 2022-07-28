@@ -24,7 +24,7 @@ export const Navigation = (props) => {
               <span className='icon-bar'></span>{' '}
             </button>
             <a className='navbar-brand page-scroll' href='/#page-top'>
-              Anime-Gadgets
+              Japanese-Gadgets
             </a>{' '}
           </div>
   
@@ -35,13 +35,13 @@ export const Navigation = (props) => {
             <ul className='nav navbar-nav navbar-right'>
               <li>
                 <a href='/#features' className='page-scroll'>
-                  Nowe Figurki
+                  Nowości
                 </a>
               </li>
 
               <li>
                 <a href='/#contact' className='page-scroll'>
-                  Contact
+                  Kontakt
                 </a>
               </li>
 
@@ -52,18 +52,18 @@ export const Navigation = (props) => {
               </li>
               <li>
                 <a href='/profile' className='page-scroll'>
-                  your profile
+                  Twój Profil
                 </a>
               </li>
 
               <li>
                 <a href='/' onClick={Logout} className='page-scroll'>
-                  logout
+                  Wyloguj
                 </a>
               </li>
               <li>
                 <a href='/cart' className='page-scroll'>
-                  koszyk
+                  Koszyk
                 </a>
               </li>
             </ul>
@@ -89,7 +89,7 @@ export const Navigation = (props) => {
               <span className='icon-bar'></span>{' '}
             </button>
             <a className='navbar-brand page-scroll' href='/#page-top'>
-              Anime-Gadgets
+              Japanese-Gadgets
             </a>{' '}
           </div>
   
@@ -100,13 +100,13 @@ export const Navigation = (props) => {
             <ul className='nav navbar-nav navbar-right'>
               <li>
                 <a href='/#features' className='page-scroll'>
-                  Nowe Figurki
+                  Nowości
                 </a>
               </li>
 
               <li>
                 <a href='/#contact' className='page-scroll'>
-                  Contact
+                  Kontakt
                 </a>
               </li>
 
@@ -118,17 +118,17 @@ export const Navigation = (props) => {
 
               <li>
                 <a href='/register' className='page-scroll'>
-                  Register
+                  Rejestracja
                 </a>
               </li>
               <li>
                 <a href='login' className='page-scroll'>
-                  Login
+                  Logowanie
                 </a>
               </li>
               <li>
                 <a href='/cart' className='page-scroll'>
-                  koszyk
+                  Koszyk
                 </a>
               </li>
             </ul>

@@ -37,7 +37,7 @@ export default class Register extends Component {
         <div className='text-center' id="all_cont">
           <h2>Register</h2>
           <form onSubmit={this.register}>
-            <input type='text' placeholder='Username' className='input' name='username'></input>
+            <input type='text' placeholder='Login' className='input' name='username'></input>
             <br></br>
             <br></br>
             <br></br>
@@ -45,11 +45,11 @@ export default class Register extends Component {
             <br></br>
             <br></br>
             <br></br>
-            <input type='password' placeholder='Password' className='input' name='password1'></input>
+            <input type='password' placeholder='Hasło' className='input' name='password1'></input>
             <br></br>
             <br></br>
             <br></br>
-            <input type='password' placeholder='Password' className='input' name='password2'></input>
+            <input type='password' placeholder='Powtórz hasło' className='input' name='password2'></input>
             <br></br>
             <br></br>
             <button type='submit'>register</button>

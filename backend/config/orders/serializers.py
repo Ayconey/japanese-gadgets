@@ -21,6 +21,7 @@ class OrderSerializer(serializers.ModelSerializer):
 class ShowOnlyOrderSerializer(serializers.ModelSerializer):
     delivery_info = DeliveryInfoSerializer(read_only=True)
     products = CartItemSerializer(many=True)
+
     class Meta:
         model = Order
         fields = ('user','products','submit_date','payment_method','full_price','completed','delivery_info')

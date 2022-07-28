@@ -8,17 +8,27 @@ export default function InfoPage() {
     const ThanksAfterOrder = () => {
         return (
         <div>
-            <h3>Your order have been received! Thanks for shopping.</h3>
-            <p>Additional info about your order were sent to your email.</p>
-            <p>you can check all your orders on your profile.</p>
+            <h3>Twoje zamówienie zostało złożone. Dzięki za zakupy!</h3>
+            <p>Dodatkowe informacje wyślemy ci na twój email.</p>
+            <p>Możesz sprawdzić wszystkie swoje zamówienia na stronie profilu.</p>
         </div>
+        )
+    }
+
+    const LoginFirst = () => {
+        return (
+            <div>
+                <h3>Musisz się najpierw zalogować!</h3>
+                <p>Lub jeśli nie masz konta, zarejestruj się, aby korzystać z funkcji naszej strony.</p>
+            </div>
         )
     }
 
     switch(mode){
         case 'afterOrder':
             return <div id='grid1'><ThanksAfterOrder/></div>
-            
+        case 'loginFirst':
+            return <div id='grid1'><LoginFirst/></div>
         default:
             return <div id='grid1'></div>
     }

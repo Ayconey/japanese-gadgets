@@ -31,8 +31,8 @@ const Login = (props) => {
     }else if(FromRegister){
       return (
         <div className='text-center' id="all_cont">
-          <h3>You are succesfully registered! You can now login to your account</h3>
-          <h2>Login</h2>
+          <h3>Pomyślnie się zarejestrowałeś! Możesz teraz zalogować się do konta.</h3>
+          <h2>Zaloguj</h2>
           <form onSubmit={try_login}>
             <input type='text' placeholder='Username' className='input' name='username'></input>
             <br></br>
@@ -48,7 +48,7 @@ const Login = (props) => {
       )}else{
       return (
         <div className='text-center' id="all_cont">
-          <h2>Login</h2>
+          <h2>Zaloguj</h2>
           <form onSubmit={try_login}>
             <input type='text' placeholder='Username' className='input' name='username'></input>
             <br></br>

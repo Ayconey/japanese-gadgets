@@ -97,7 +97,15 @@ export default function CheckoutOrder() {
     if (delivery_pay){
       pay_at_delivery = 9
     }
-
+  let validated = true
+    for (const [key, value] of Object.entries(User.profile)) {
+      if(value ===""){
+        validated=false
+      }
+    }
+  if(!validated){
+    return <Navigate to='/'/>
+  }
   if(moveNext){
     return <Navigate to={{
       pathname: "/info",
@@ -130,6 +138,7 @@ export default function CheckoutOrder() {
 
                 <br></br>
                 <br></br>
+                
                 <h3>Metoda Płatności</h3>
                 <br></br>
                 <select id='sel-list' onChange={handleChange}>
