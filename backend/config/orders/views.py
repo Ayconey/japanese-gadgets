@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
-
+from rest_framework.response import Response
 from .models import Order
 from products.models import CartItem
 from .serializers import OrderSerializer,ShowOnlyOrderSerializer
@@ -17,6 +17,8 @@ class OrderListCreateView(generics.ListCreateAPIView):
         for i in products:
             tmp = CartItem.objects.get(pk=i)
             p = tmp.product
+            if p.count <=0:
+                return Response(status=400)
             p.count -= tmp.quantity
             p.save()
         return super().perform_create(serializer)

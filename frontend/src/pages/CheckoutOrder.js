@@ -23,6 +23,7 @@ export default function CheckoutOrder() {
       houseNumber:null,
     }
   })
+  const [Validated,updateValidated] = useState(true)
   const [Cart,updateCart] = useState([])
   const [ItemPrice,updateItemPrice] = useState(0)
   const [PaymentMethod,updatePaymentMethod] = useState('card')
@@ -39,6 +40,11 @@ export default function CheckoutOrder() {
     .then((response)=>{
       console.log(response)
       updateUser(response.data)
+      for (const [key, value] of Object.entries(response.data.profile)) {
+        if(value ===""){
+          updateValidated(false)
+        }
+      }
     })
   }
 
@@ -53,6 +59,9 @@ export default function CheckoutOrder() {
       updateCart(response.data.items)
       updateItemPrice(response.data.price_of_items)
       updateFinalPrice(response.data.price_of_items)
+      if(response.data.price_of_items === 0){
+        updateValidated(false)
+      }
   })
   }
 
@@ -97,13 +106,8 @@ export default function CheckoutOrder() {
     if (delivery_pay){
       pay_at_delivery = 9
     }
-  let validated = true
-    for (const [key, value] of Object.entries(User.profile)) {
-      if(value ===""){
-        validated=false
-      }
-    }
-  if(!validated){
+
+  if(!Validated){
     return <Navigate to='/'/>
   }
   if(moveNext){

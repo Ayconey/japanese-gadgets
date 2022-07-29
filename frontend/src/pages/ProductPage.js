@@ -25,6 +25,18 @@ export default function ProductPage(props) {
           })
     }
 
+    const Button = () => {
+        if(Product.count === 0){
+            return <div><br></br><h3>!brak na stanie!</h3></div>
+        }
+        return (
+            <div>
+                <button id='btn1' onClick={UpdateCart}>Dodaj do koszyka</button>
+                <input type='number' min={0} max={Product.count} defaultValue={1} onChange={QuantityHelper}></input>
+            </div>
+            )
+    }
+
     const UpdateCart = () =>{
         const headers = {
             'content-type':'application/json',
@@ -73,8 +85,8 @@ export default function ProductPage(props) {
                     <Row id='button-row'>
                     <h3>Dostępność: {Product.count} sztuk</h3>
                     <h3 id='price'>cena: {Product.price} zł</h3>
-                        <button id='btn1' onClick={UpdateCart}>Dodaj do koszyka</button>
-                        <input type='number' min={0} max={Product.count} defaultValue={1} onChange={QuantityHelper}></input>
+                        <Button/>
+                        
                     </Row>
                     
                 </Col>

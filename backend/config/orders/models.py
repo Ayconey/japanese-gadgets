@@ -19,6 +19,7 @@ class Order(models.Model):
     def __str__(self):
         return self.user.username + ' ' + str(self.submit_date)
 
+
 class DeliveryInfo(models.Model):
     order = models.OneToOneField(Order,on_delete=models.CASCADE,related_name='delivery_info')
     # user's info
