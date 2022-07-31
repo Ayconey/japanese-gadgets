@@ -24,5 +24,5 @@ class ShowOnlyOrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = ('user','products','submit_date','payment_method','full_price','completed','delivery_info')
+        fields = ('id','user','products','submit_date','payment_method','full_price','completed','delivery_info')
         read_only_fields = fields

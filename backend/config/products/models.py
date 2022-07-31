@@ -28,6 +28,7 @@ class CartItem(models.Model):
     def price(self):
         return self.product.price * self.quantity
 
+
 # user's cart
 class Cart(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='cart')

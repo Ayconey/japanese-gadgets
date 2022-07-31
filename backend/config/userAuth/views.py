@@ -31,3 +31,10 @@ def get_user_data(request):
     us = request.user
     serializer = UserSerializer(us)
     return Response(status=200,data=serializer.data)
+
+
+@api_view(['GET'])
+def is_admin_user(request):
+    if request.user.is_superuser:
+        return Response(status=200)
+    return Response(status=403)

@@ -2,37 +2,38 @@ import React, { Component } from 'react'
 import { Form,Button,Row,Col } from 'react-bootstrap';
 import '../css/admin.css'
 import axios from 'axios';
+import Cookies from 'js-cookie'
+import AdminComp from '../customComponents/AdminComp';
+
 export default class Admin extends Component {
     constructor(props){
         super(props);
         this.state = {
-          logged:false,
+          admin:false,
         }
     }
-  try_login = (event)=>{
-    event.preventDefault();
-    const username = event.target.username.value;
-    const password = event.target.password.value;
-
-  }
+  check_is_admin = ()=>{
+    const headers = {
+      'content-type':'application/json',
+      'Authorization': `Bearer ${Cookies.get('access')}`,
+    }
+    axios.get('http://127.0.0.1:8000/api/users/is_admin/',{headers:headers})
+    .then((response)=>{
   
+        this.setState({admin:true});
+    })
+  }
+  componentDidMount(){
+    this.check_is_admin()
+  }
+
   render() {
-    if (this.state.logged){
-      return
+    if (this.state.admin){
+      return <AdminComp/>
     }else{
       return (
         <div className='text-center' id="all_cont">
-          <h2>Login to admin</h2>
-          <form onSubmit={this.try_login}>
-            <input type='text' placeholder='Username' className='input' name='username'></input>
-            <br></br>
-            <br></br>
-            <br></br>
-            <input type='password' placeholder='Password' className='input' name='password'></input>
-            <br></br>
-            <br></br>
-            <button type='submit'>Login</button>
-          </form>
+          <h2>You are not an admin!</h2>
           
         </div>
       )

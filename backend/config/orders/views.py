@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
+from rest_framework.permissions import IsAdminUser
 from .models import Order
 from products.models import CartItem
 from .serializers import OrderSerializer,ShowOnlyOrderSerializer
@@ -31,3 +32,9 @@ class UserOrdersView(generics.ListAPIView):
     def get_queryset(self):
         q = Order.objects.all().filter(user=self.request.user)
         return q
+
+
+class OrdersForAdmin(generics.ListAPIView):
+    queryset = Order.objects.all()
+    serializer_class = ShowOnlyOrderSerializer
+    permission_classes = [IsAdminUser]
