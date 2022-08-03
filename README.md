@@ -32,8 +32,14 @@ with working categories
 ## cart
 ![cart](/screenshots/cart.png "")
 ## checkout order
+ Final view of the order with payment option from 3: blik, card, cash on delivery.
+ 
 ![checkout](/screenshots/checkout.png "")
 ## admin's page :cop:
+- check all orders
+- all users
+- and all products
+
 ![admin](/screenshots/admin.png "")
 
 ## techologies used :computer:
