@@ -12,3 +12,13 @@
     padding: 3%;
     margin: 10px;
 }
+
+.btnn1{
+    font-size: 230%;
+    padding-left: 30%;
+    padding-right:30%;
+    padding-top:5% ;
+    padding-bottom: 5%;
+    background-color: rgb(70, 70, 70);
+    border:none;
+}

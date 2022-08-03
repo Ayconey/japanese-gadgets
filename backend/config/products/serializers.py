@@ -5,7 +5,7 @@ from rest_framework import serializers
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id','title','body','price','count','image')
+        fields = ('id','title','body','price','category','count','image')
 
 
 class CartItemSerializer(serializers.ModelSerializer):

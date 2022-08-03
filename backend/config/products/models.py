@@ -12,6 +12,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     price = models.FloatField()
+    category = models.CharField(max_length=100,blank=True,null=True,default='')
     image = models.ImageField(upload_to='products/',default='products/default.jpg')
     count = models.IntegerField() # number of that exact product in warehouse
     

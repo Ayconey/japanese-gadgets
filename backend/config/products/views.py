@@ -27,7 +27,12 @@ class ProductMixinView():
 
 
 class ProductListView(ProductMixinView,generics.ListCreateAPIView):
-    pass
+    def get_queryset(self):
+        queryset = Product.objects.all()
+        category = self.request.query_params.get('category')
+        if category:
+            queryset=queryset.filter(category=category)
+        return queryset
 
 
 class ProductDetailView(ProductMixinView,generics.RetrieveUpdateDestroyAPIView):

@@ -133,7 +133,7 @@ export default function CheckoutOrder() {
 
                 {Cart.map((item)=>(
                 <div key={item.product.id} className='cart_item'>
-                  <h3>{item.product.title}</h3>
+                  <h3>{item.product.title} x {item.quantity}</h3>
                   <p>cena: {item.product.price}zł</p>
                   <p>łącznie: {item.price}zł</p>
                   <img id='img1' src={`http://127.0.0.1:8000/${item.product.image}`}/>

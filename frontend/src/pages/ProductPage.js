@@ -59,7 +59,46 @@ export default function ProductPage(props) {
     useEffect(()=>{
         GetProduct()
     },[])
-
+    if(Product.count===0){
+        return (
+            <div>
+                <Row id='container1'>
+                
+                    <Col md={2}></Col>
+                    <Col md={8} id='middle-column'>
+                        <h2 id='p_title'>{Product.title}</h2>
+                        
+                        <Col md={5} id='image-column'>
+                            <img src={`${Product.image}`}></img>
+                        </Col>
+                        <Col md={1}>
+                        </Col>
+                        <Col md={6} id='text-column'>
+                            <h3>Rating:  
+                                <StarsRating
+                                value={value}
+                                onChange={value => {
+                                setValue(value);
+                                }}
+                            /> </h3>
+                           
+                            <p id='desc'>{Product.body}</p>
+                            
+                            <Row id='button-row'>
+                            <h3>Dostępność: {Product.count} sztuk</h3>
+                            <h3 id='price'>cena: {Product.price} zł</h3>
+                            <div><br></br><h3>!brak na stanie!</h3></div>
+                                
+                            </Row>
+                            
+                        </Col>
+                        
+                    </Col>
+                    <Col md={2}></Col>
+                </Row>
+            </div>
+          )
+    }
   return (
     <div>
         <Row id='container1'>
@@ -68,8 +107,10 @@ export default function ProductPage(props) {
             <Col md={8} id='middle-column'>
                 <h2 id='p_title'>{Product.title}</h2>
                 
-                <Col md={6} id='image-column'>
+                <Col md={5} id='image-column'>
                     <img src={`${Product.image}`}></img>
+                </Col>
+                <Col md={1}>
                 </Col>
                 <Col md={6} id='text-column'>
                     <h3>Rating:  
@@ -85,7 +126,8 @@ export default function ProductPage(props) {
                     <Row id='button-row'>
                     <h3>Dostępność: {Product.count} sztuk</h3>
                     <h3 id='price'>cena: {Product.price} zł</h3>
-                        <Button/>
+                    <button id='btn1' onClick={UpdateCart}>Dodaj do koszyka</button>
+                    <input type='number' min={0} max={Product.count} defaultValue={1} onChange={QuantityHelper}></input>
                         
                     </Row>
                     
