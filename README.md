@@ -41,5 +41,5 @@ with working categories
 - django rest_framework
 - jwt tokens
 - react.js with bootstrap
-more in backend/config/requirements.txt
+- more in backend/config/requirements.txt
 
